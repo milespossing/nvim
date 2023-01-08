@@ -18,3 +18,5 @@ vim.keymap.set('n', '<C-n>', '<cmd> NvimTreeToggle <CR>', {})
 -- leap
 vim.keymap.set('n', '<leader><leader>w', '<Plug>(leap-forward-to)', {})
 vim.keymap.set('n', '<leader><leader>b', '<Plug>(leap-backward-to)', {})
+
+vim.keymap.set('n', '<leader>gh', vim.lsp.buf.hover, {})
