@@ -15,4 +15,3 @@ require("nvim-tree").setup()
 require('general')
 require('settings')
 require('mappings')
-

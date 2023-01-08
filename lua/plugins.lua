@@ -44,12 +44,13 @@ require('lazy').setup({
     dependencies = 'hrsh7th/nvim-cmp'
   },
   {
-    'goolord/alpha-nvim',
-    config = function ()
-      require'alpha'.setup(require'alpha.themes.dashboard'.config)
-    end
+      'goolord/alpha-nvim',
+      config = function()
+	      require'config.alpha'.config()
+      end
   },
   { 'ggandor/leap.nvim' },
+  { 'epwalsh/obsidian.nvim' },
 })
 
 
@@ -58,3 +59,10 @@ require("mason").setup()
 
 require("plugins.cmp")
 require("plugins.tabnine")
+
+require('obsidian').setup({
+    dir = "~/obsidian/WorkVault",
+    completion = {
+        nvim_cmp = true,
+    }
+})
