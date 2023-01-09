@@ -25,8 +25,7 @@ require('lazy').setup({
   { 'nyoom-engineering/oxocarbon.nvim' },
   { 'kdheepak/lazygit.nvim' },
   { 'williamboman/mason.nvim' },
-  { 'williamboman/mason-lspconfig.nvim' },
-  { 'neovim/nvim-lspconfig' },
+  { 'neovim/nvim-lspconfig', config = function() require('config.lsp').config() end },
   { 'hrsh7th/cmp-nvim-lsp', dependencies = 'hrsh7th/nvim-cmp' },
   { 'hrsh7th/cmp-path', dependencies = 'hrsh7th/nvim-cmp' },
   { 'hrsh7th/cmp-buffer', dependencies = 'hrsh7th/nvim-cmp' },
@@ -50,19 +49,18 @@ require('lazy').setup({
       end
   },
   { 'ggandor/leap.nvim' },
-  { 'epwalsh/obsidian.nvim' },
+  {
+      'folke/trouble.nvim',
+      dependencies = 'kyazdani42/nvim-web-devicons',
+      config = function()
+          require('trouble').setup {}
+      end
+  }
 })
 
 
 
 require("mason").setup()
 
-require("plugins.cmp")
-require("plugins.tabnine")
-
-require('obsidian').setup({
-    dir = "~/obsidian/WorkVault",
-    completion = {
-        nvim_cmp = true,
-    }
-})
+require("completions")
+require("tabnine")

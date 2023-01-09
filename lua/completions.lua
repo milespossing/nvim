@@ -32,7 +32,7 @@ cmp.setup({
    			if detail and detail:find('.*%%.*') then
    				vim_item.kind = vim_item.kind .. ' ' .. detail
    			end
-  
+
    			if (entry.completion_item.data or {}).multiline then
    				vim_item.kind = vim_item.kind .. ' ' .. '[ML]'
    			end
@@ -54,8 +54,6 @@ cmp.setup({
     { name = 'buffer' },
   }),
 })
-
-require'plugins.lsp'
 
 --require("mason-lspconfig").setup_handlers {
 --    -- The first entry (without a key) will be the default handler
